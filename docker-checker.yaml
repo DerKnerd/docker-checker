@@ -1,0 +1,17 @@
+# Example docker-checker.yaml
+email:
+  from: noreply@example.com
+  to: me@example.com
+  username: noreply@example.com
+  password: start1234
+  host: 127.0.0.1
+  port: 1025
+images:
+  - name: library/mysql
+    constraint: "< 8.0, > 5.7"
+    usedVersion: 5.7
+  - name: library/mysql
+    constraint: "> 8.0"
+    usedVersion: 8.0.23
+  - name: library/wordpress
+    usedVersion: 5.5.0
