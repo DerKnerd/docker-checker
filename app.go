@@ -2,6 +2,7 @@ package main
 
 import (
 	configuration2 "docker-checker/configuration"
+	"docker-checker/dockerApi"
 	"docker-checker/mailing"
 	"flag"
 	"fmt"
@@ -26,7 +27,7 @@ func main() {
 	log.Println("Start check for docker images")
 	for _, image := range configuration.Images {
 		log.Printf("Check for docker image %s", image.Name)
-		tagList, err := GetVersions(image.Name)
+		tagList, err := dockerApi.GetVersions(image.Name)
 		if err != nil {
 			log.Fatal(err.Error())
 		}

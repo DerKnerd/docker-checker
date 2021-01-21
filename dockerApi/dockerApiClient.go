@@ -1,4 +1,4 @@
-package main
+package dockerApi
 
 import (
 	"encoding/json"

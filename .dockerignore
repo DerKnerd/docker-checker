@@ -3,4 +3,4 @@
 .dockerignore
 docker-checker.yaml
 docker-compose.yaml
-dockerApi/Dockerfile
+Dockerfile
