@@ -1,6 +1,8 @@
 package main
 
 import (
+	configuration2 "docker-checker/configuration"
+	"docker-checker/mailing"
 	"flag"
 	"fmt"
 	"github.com/hashicorp/go-version"
@@ -16,7 +18,7 @@ func main() {
 	flag.StringVar(&configFilePath, "config-file", fmt.Sprintf("%s/docker-checker.yaml", pwd), "Specifies the config file to use")
 	flag.Parse()
 
-	configuration, err := ParseConfig(configFilePath)
+	configuration, err := configuration2.ParseConfig(configFilePath)
 	if err != nil {
 		log.Fatal("Failed to read configuration")
 	}
@@ -54,7 +56,7 @@ func main() {
 		for _, tag := range versions {
 			if versionConstraint.Check(tag) && !tag.LessThanOrEqual(usedVersion) {
 				log.Printf("Found newer version for image %s, newer version is %s", tagList.Name, tag.String())
-				if err = SendMail(*usedVersion, *tag, image, configuration.Email); err != nil {
+				if err = mailing.SendMail(*usedVersion, *tag, image, configuration.Email); err != nil {
 					log.Printf("Failed to send message for image %s", image.Name)
 					log.Println(err.Error())
 				}

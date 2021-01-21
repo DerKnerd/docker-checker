@@ -1,6 +1,6 @@
 FROM golang:1.15-alpine
 WORKDIR /app
-COPY . .
+COPY .. .
 
 RUN go build -o /docker-checker
 
