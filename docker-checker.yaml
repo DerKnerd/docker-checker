@@ -15,3 +15,5 @@ images:
     usedVersion: 8.0.23
   - name: library/wordpress
     usedVersion: 5.5.0
+  - name: library/postgres
+    usedVersion: 13.1

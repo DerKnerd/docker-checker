@@ -15,6 +15,7 @@ spec:
     - name: docker-sock
       hostPath:
         path: /var/run/docker.sock
+  containers:
   - name: docker
     image: registry.imanuel.dev/library/docker:stable
     command:
