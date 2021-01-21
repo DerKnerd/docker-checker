@@ -32,7 +32,7 @@ func main() {
 			log.Fatal(err.Error())
 		}
 
-		log.Printf("Found %d tagList for image %s", len(tagList.Tags), tagList.Name)
+		log.Printf("Found %d tags for image %s", len(tagList.Tags), tagList.Name)
 		versionConstraint, err := version.NewConstraint(image.Constraint)
 		if err != nil {
 			log.Printf("Failed to create version constraint for version %s", image.Constraint)
@@ -56,7 +56,7 @@ func main() {
 
 		for _, tag := range versions {
 			if versionConstraint.Check(tag) && !tag.LessThanOrEqual(usedVersion) {
-				log.Printf("Found newer version for image %s, newer version is %s", tagList.Name, tag.String())
+				log.Printf("Found newer version for image %s:%s, newer version is %s", tagList.Name, usedVersion.String(), tag.String())
 				if err = mailing.SendMail(*usedVersion, *tag, image, configuration.Email); err != nil {
 					log.Printf("Failed to send message for image %s", image.Name)
 					log.Println(err.Error())
