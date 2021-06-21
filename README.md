@@ -28,5 +28,8 @@ Variable      | Description
 `usedVersion` | The currently used version, update this field after you updated your containers
 `constraint`  | A version constraint to check by. An example constraint can be found in the `docker-checker.yaml`.
 
+## Found a bug?
+If you found a bug feel free to create an issue on Github or on my personal Taiga instance: https://taiga.imanuel.dev/project/docker-version-check/
+
 ## License
 Like all other projects I create, the Docker checker is distributed under the MIT License.
