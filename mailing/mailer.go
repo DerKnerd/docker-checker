@@ -11,7 +11,7 @@ import (
 	"strconv"
 )
 
-func SendMail(usedVersion version.Version, latestVersion version.Version, image configuration.Image, config configuration.EmailConfig) error {
+func SendMail(usedVersion *version.Version, latestVersion *version.Version, image *configuration.Image, config *configuration.EmailConfig) error {
 	tmpl, err := template.New("email").ParseFiles("mailing/mail-body.gohtml")
 	if err != nil {
 		return err
