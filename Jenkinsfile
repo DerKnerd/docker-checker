@@ -30,18 +30,18 @@ spec:
         stage('Push') {
             steps {
                 container('docker') {
-                    sh "docker build -t quay.imanuel.dev/imanuel/docker-checker:$BUILD_NUMBER -f ./Dockerfile ."
-                    sh "docker tag quay.imanuel.dev/imanuel/docker-checker:$BUILD_NUMBER quay.imanuel.dev/imanuel/docker-checker:latest"
+                    sh "docker build -t quay.imanuel.dev/imanuel/docker-checker:v1.$BUILD_NUMBER -f ./Dockerfile ."
+                    sh "docker tag quay.imanuel.dev/imanuel/docker-checker:v1.$BUILD_NUMBER quay.imanuel.dev/imanuel/docker-checker:latest"
 
-                    sh "docker tag quay.imanuel.dev/imanuel/docker-checker:$BUILD_NUMBER iulbricht/docker-checker:$BUILD_NUMBER"
-                    sh "docker tag quay.imanuel.dev/imanuel/docker-checker:$BUILD_NUMBER iulbricht/docker-checker:latest"
+                    sh "docker tag quay.imanuel.dev/imanuel/docker-checker:v1.$BUILD_NUMBER iulbricht/docker-checker:v1.$BUILD_NUMBER"
+                    sh "docker tag quay.imanuel.dev/imanuel/docker-checker:v1.$BUILD_NUMBER iulbricht/docker-checker:latest"
 
                     withDockerRegistry(credentialsId: 'quay.imanuel.dev', url: 'https://quay.imanuel.dev') {
-                        sh "docker push quay.imanuel.dev/imanuel/docker-checker:$BUILD_NUMBER"
+                        sh "docker push quay.imanuel.dev/imanuel/docker-checker:v1.$BUILD_NUMBER"
                         sh "docker push quay.imanuel.dev/imanuel/docker-checker:latest"
                     }
                     withDockerRegistry(credentialsId: 'hub.docker.com', url: '') {
-                        sh "docker push iulbricht/docker-checker:$BUILD_NUMBER"
+                        sh "docker push iulbricht/docker-checker:v1.$BUILD_NUMBER"
                         sh "docker push iulbricht/docker-checker:latest"
                     }
                 }
