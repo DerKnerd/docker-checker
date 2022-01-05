@@ -1,5 +1,5 @@
-github.com/hashicorp/go-version v1.3.0 h1:McDWVJIU/y+u1BRV06dPaLfLCaT7fUTJLp5r04x7iNw=
-github.com/hashicorp/go-version v1.3.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
+github.com/hashicorp/go-version v1.4.0 h1:aAQzgqIrRKRa7w75CKpbBxYsmUoPjzVm1W59ca1L0J4=
+github.com/hashicorp/go-version v1.4.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
 github.com/scorredoira/email v0.0.0-20191107070024-dc7b732c55da h1:hhmnjfzz7szp75AyXxn8tDfEA0oU4REQLmpuW6zNAOY=
 github.com/scorredoira/email v0.0.0-20191107070024-dc7b732c55da/go.mod h1:Q5ljvYIBpukMH+wgB8kcPV1i9NX8TqU++8GgBKq3pt0=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
